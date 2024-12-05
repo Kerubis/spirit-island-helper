@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Brandenburg-Prussia",
+        "description": "No additional rules for this adversary. Faster invader deck progression.",
+        "Additional Loss Condition": {
+            "name": "Proud & Mighty Capitol",
+            "description": "If 7 or more {town}/{city} are ever in a single land, the Invaders win."
+        },
+        "levels": {
+            "1": {
+                "difficulty": 3,
+                "name": "Indentured Servants Earn Land",
+                "phases": [
+                    {
+                        "id": 41,
+                        "name": "Additonal Loss Condition",
+                        "description": "{flag-england}Loss Condition"
+                    }
+                ],
+                "invaderSteps": [
+                    {
+                        "id": 40,
+                        "name": "Build",
+                        "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                    }
+                ]
+            },
+            "3": {},
+            "4": {},
+            "5": {},
+            "6": {}
+        }
+    },
+    {
+        "name": "England",
+        "description": "",
+        "Additional Loss Condition": {
+            "name": "Proud & Mighty Capitol",
+            "description": "If 7 or more {town}/{city} are ever in a single land, the Invaders win."
+        },
+        "difficulty": {
+            "1": {
+                "name": "Indentured Servant Earn Land",
+                "description": "Invader Build actions affect lands without Invader, if thez are adjacent to alt least 2 {town}/{city} before the Build Action",
+                "invaderSteps": []
+            },
+            "2": {
+                "name": "Surge of Colonists",
+                "invaderSteps": []
+            },
+            "3": {
+                "name": "High Immigration (I)",
+                "description": "Invader Build actions affect lands without Invader, if thez are adjacent to alt least 2 {town}/{city} before the Build Action",
+                "invaderSteps": [
+                    "Bligted Island",
+                    "Event Card",
+                    "Fear Cards",
+                    "Extra-Build",
+                    "Ravage",
+                    "Build",
+                    "Explore (Stage II Escalation)",
+                    "Advance Invader Cards"
+                ]
+            },
+            "4": {
+                "name": "Surge of Colonists",
+                "invaderSteps": [
+                    "Bligted Island",
+                    "Event Card",
+                    "Fear Cards",
+                    "Extra-Build",
+                    "Ravage",
+                    "Build",
+                    "Explore (Stage II Escalation)",
+                    "Advance Invader Cards"
+                ]
+            },
+            "5": {
+                "name": "Surge of Colonists",
+                "invaderSteps": [
+                    "Bligted Island",
+                    "Event Card",
+                    "Fear Cards",
+                    "Extra-Build",
+                    "Ravage",
+                    "Build",
+                    "Explore (Stage II Escalation)",
+                    "Advance Invader Cards"
+                ]
+            },
+            "6": {
+                "name": "Surge of Colonists",
+                "invaderSteps": [
+                    "Bligted Island",
+                    "Event Card",
+                    "Fear Cards",
+                    "Extra-Build",
+                    "Ravage",
+                    "Build",
+                    "Explore (Stage II Escalation)",
+                    "Advance Invader Cards"
+                ]
+            }
+        }
+    }
+]

@@ -1,0 +1,29 @@
+{
+    "scenarios": [
+        {
+            "name": "Brandenburg-Prussia",
+            "description": "No additional rules for this adversary. Faster invader deck progression.",
+            "Additional Loss Condition": {
+                "name": "Proud & Mighty Capitol",
+                "description": "If 7 or more {town}/{city} are ever in a single land, the Invaders win."
+            },
+            "data": {
+                "difficulty": 3,
+                "phases": [
+                    {
+                        "id": 41,
+                        "name": "Additonal Loss Condition",
+                        "description": "{flag-england}Loss Condition"
+                    }
+                ],
+                "invaderSteps": [
+                    {
+                        "id": 40,
+                        "name": "Build",
+                        "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                    }
+                ]
+            }
+        }
+    ]
+}
