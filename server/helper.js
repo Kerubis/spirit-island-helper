@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { clientData } = require('./globalState');
 
-function getPlayerArray(ws, clientData) {
+function getPlayerArray(ws) {
     const players = [];
     for (const [client, info] of clientData.entries()) {
         if (info.username) {

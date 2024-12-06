@@ -1,27 +1,26 @@
 const WebSocket = require('ws');
 const { getPlayerArray } = require('./helper');
 const { handleMessage } = require('./messageHandler');
-
-// Map to store temporary data for each client
-const clientData = new Map();
-const gameData = {};
+const { clientData } = require('./globalState');
 
 /**
  * Broadcast a message to all clients except the excluded client.
  * @param {WebSocket.Server} wss - The WebSocket server.
  * @param {string} message - The message to broadcast.
- * @param {WebSocket} [excludeClient] - The client to exclude from the broadcast.
+ * @param {WebSocket} [excludeSender] - The client to exclude from the broadcast.
  */
-function broadcast(wss, clientData, message, excludeClient = null) {
+function broadcast(wss, ws, message, excludeSender = false) {
     wss.clients.forEach((client) => {
-        if (client.readyState === WebSocket.OPEN && client !== excludeClient) {
-            const ws = client; // Assign the WebSocket instance to ws
-            sendToClient(ws, clientData, message);
+        const websocketOpen = client.readyState === WebSocket.OPEN;
+        const isSender = client === ws;
+        const skipSender = excludeSender && isSender;
+        if (websocketOpen && !skipSender) {
+            sendToClient(client, message, isSender);
         }
     });
 }
 
-function sendToClient(ws, clientData, message) {
+function sendToClient(ws, message, isSender = false) {
     const clientInfo = clientData.get(ws);
 
     if (!clientInfo.username) {
@@ -36,20 +35,16 @@ function sendToClient(ws, clientData, message) {
             }));
             return;
         }
-
-        // Check the message type after ensuring it is valid JSON
-        if (parsed.type === 'joinGame') {
-            handleJoinGame(wss, ws, clientData, message, broadcast);
-        } else {
-            ws.send(JSON.stringify({
-                type: 'requestLogin',
-                players: getPlayerArray(ws, clientData)
-            }));
-        }
+        ws.send(JSON.stringify({
+            type: 'requestLogin',
+            players: getPlayerArray(ws)
+        }));
         return;
     }
-
     // If the client has a username, send the message as-is
+    const messageToSend = JSON.stringify({
+        
+    });
     ws.send(message);
 }
 
@@ -63,17 +58,17 @@ function handleConnection(wss, ws) {
 
     // Initialize data for the client
     clientData.set(ws, {});
-    broadcast(wss, clientData, JSON.stringify(
+    broadcast(wss, ws, JSON.stringify(
         {
             type: 'players',
-            players: getPlayerArray(ws, clientData)
+            players: getPlayerArray(ws)
         }
-    ), ws);
+    ), true);
 
     // Handle incoming messages
     ws.on('message', (message) => {
         // console.log('Websocket Manager Received message:', message);
-        handleMessage(wss, ws, clientData, message, broadcast, sendToClient);
+        handleMessage(wss, ws, message, broadcast, sendToClient);
     });
 
     // Handle disconnection
@@ -84,12 +79,12 @@ function handleConnection(wss, ws) {
         console.log(`${username} disconnected`);
 
         // Broadcast disconnection message
-        broadcast(wss, clientData, JSON.stringify(
+        broadcast(wss, ws, JSON.stringify(
             {
                 type: 'players',
-                players: getPlayerArray(ws, clientData)
+                players: getPlayerArray(ws)
             }
-        ), ws);
+        ), true);
 
         // Remove client's data
         clientData.delete(ws);
