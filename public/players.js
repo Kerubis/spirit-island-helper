@@ -9,13 +9,12 @@ function renderPlayers(message, onReady) {
         const isMe = message.myColor === player.playerColor;
 
         const playerWrapper = createPlayerWrapper(isMe);
-        playerContainer.appendChild(playerWrapper);
-
         const playerBox = createPlayerBox(isMe, player);
-        playerWrapper.appendChild(playerBox);
-
         const textBox = createPlayerTextBox(player);
-        playerBox.appendChild(textBox);        
+
+        playerContainer.appendChild(playerWrapper);
+        playerWrapper.appendChild(playerBox);
+        playerBox.appendChild(textBox);
 
         if (!isMe) {
             const readyToken = createReadyToken(player.ready);

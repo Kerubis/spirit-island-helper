@@ -1,4 +1,3 @@
-
 {
     "name": "The Kingdom of England",
     "description": "",
@@ -20,13 +19,19 @@
                 3
             ],
             "name": "Indentured Servants Earn Land",
-            "phases": [],
-            "invaderSteps": [
+            "phases": [
                 {
                     "id": 40,
                     "action": "add",
-                    "name": "Build",
-                    "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 40,
+                            "action": "add",
+                            "name": "Build",
+                            "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                        }
+                    ]
                 }
             ]
         },
@@ -48,8 +53,7 @@
                         "During Setup, on each board add 1 {city} to land #1 and 1 [town] to land #2"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 3,
@@ -60,13 +64,19 @@
                 4
             ],
             "name": "High Immigration (I)",
-            "phases": [],
-            "invaderSteps": [
+            "phases": [
                 {
-                    "id": 25,
+                    "id": 40,
                     "action": "add",
-                    "name": "High Immigration",
-                    "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile. Remove the tile when a Stage II card slides onto it, putting that card in the discard."
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 25,
+                            "action": "add",
+                            "name": "High Immigration",
+                            "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile. Remove the tile when a Stage II card slides onto it, putting that card in the discard."
+                        }
+                    ]
                 }
             ]
         },
@@ -79,19 +89,25 @@
                 5
             ],
             "name": "High Immigration (full)",
-            "phases": [],
-            "invaderSteps": [
+            "phases": [
                 {
-                    "id": 25,
-                    "action": "replace",
-                    "name": "High Immigration",
-                    "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile."
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 25,
+                            "action": "replace",
+                            "name": "High Immigration",
+                            "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile."
+                        }
+                    ]
                 }
             ]
         },
         {
             "level": 5,
-            "difficulty": 7,
+            "difficulty": 9,
             "fearCards": [
                 4,
                 5,
@@ -99,8 +115,7 @@
             ],
             "name": "Local Autonomy",
             "staticInformation": "Town/City have +1 Health.",
-            "phases": [],
-            "invaderSteps": []
+            "phases": []
         },
         {
             "level": 6,
@@ -120,8 +135,7 @@
                         "During Setup, add an additional Fear to the Fear Pool per player in the game. During any Invader Phase where you resolve no Fear Cards, perform the Build from High Immigration twice. (This has no effect if no card is on the extra Build slot.)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         }
     ]
 }

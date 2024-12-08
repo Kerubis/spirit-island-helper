@@ -1,10 +1,12 @@
 {
-    "phases": {
-        "10": {
+    "phases": [
+        {
+            "id": 10,
             "name": "Setup",
             "steps": []
         },
-        "20": {
+        {
+            "id": 20,
             "name": "Spirit Phase",
             "steps": [
                 "Growth",
@@ -12,10 +14,12 @@
                 "Play and pay for Power Cards"
             ]
         },
-        "30": {
+        {
+            "id": 30,
             "name": "Fast Power Phase {fast}(Cards an Innate)"
         },
-        "40": {
+        {
+            "id": 40,
             "name": "Invader Phase",
             "steps": [
                 {
@@ -31,7 +35,7 @@
                 {
                     "id": 30,
                     "name": "Ravage",
-                    "description": "Rave Step"
+                    "description": "Ravage Step"
                 },
                 {
                     "id": 40,
@@ -41,24 +45,31 @@
                 {
                     "id": 50,
                     "name": "Explore (Stage II Escalation)",
-                    "description": "Escalation Step"
+                    "description": "Explore Step"
                 },
                 {
                     "id": 60,
+                    "name": "Stage II Escalation",
+                    "description": "Escalation Step"
+                },
+                {
+                    "id": 70,
                     "name": "Advance Invader Cards",
                     "description": "Advance Invader Cards"
                 }
             ]
         },
-        "50": {
+        {
+            "id": 50,
             "name": "Slow Power Phase {slow}(Cards an Innate)"
         },
-        "60": {
+        {
+            "id": 60,
             "name": "Time Passes",
             "steps": [
                 "Played Power Cards go to personal discards.",
                 "Damage and Elements go away."
             ]
         }
-    }
+    ]
 }

@@ -64,7 +64,7 @@ function generateLoginFormUI(players) {
         } else {
             colorBox.classList.add("color-box");
             colorBox.style.cursor = "pointer";
-            colorBox.style.boxShadow = "0 0 6px 2px rgb(0 255 69)";
+            // colorBox.style.boxShadow = "0 0 6px 2px rgb(0 255 69)";
         }
 
         colorPicker.appendChild(colorBox);
