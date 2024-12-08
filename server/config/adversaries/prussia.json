@@ -7,6 +7,7 @@
         "description": "On each board with {town}/{city}, add 1 Town to a land without {town}."
     },
     
+    
     "levels": [
         {
             "level": 1,
