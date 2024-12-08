@@ -1,0 +1,167 @@
+{
+    "name": "The Kingdom of France (Plantation Colony)",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Sprawling Plantations",
+        "description": "Invaders win if you ever cannot place a Town.",
+        "phases": [
+            {
+                "id": 5,
+                "action": "add",
+                "name": "Before Setup",
+                "description": "Before Setup, return all but 7 Town per player to the box."
+            }
+        ]
+    },
+    "escalation": {
+        "name": "Demand for New Cash Crops",
+        "description": "{escalation}  After Exploring, on each board, pick a land of the shown terrain. If it has Town/City, add 1 Blight. Otherwise, add 1 Town."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                3,
+                3
+            ],
+            "name": "Frontier Explorers",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 50,
+                            "action": "add",
+                            "name": "Explore",
+                            "description": "Except during Setup: After Invaders successfully Explore into a land which had no Town/City, add 1 Explorer there."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "difficulty": 5,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Slave Labor",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "description": "During Setup, put the 'Slave Rebellion' event under the top 3 cards of the Event Deck."
+                },
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 45,
+                            "action": "add",
+                            "name": "After Build",
+                            "description": "After Invaders Build in a land with 2 Explorer or more, replace all but 1 Explorer there with an equal number of Town."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Early Plantation",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "description": "During Setup, on each board add 1 Town to the highest-numbered land without Town. Add 1 Town to land #1."
+                }
+            ],
+            "40": []
+        },
+        {
+            "level": 4,
+            "difficulty": 8,
+            "fearCards": [
+                4,
+                4,
+                4
+            ],
+            "name": "Triangle Trade",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 40,
+                            "action": "add",
+                            "name": "Build",
+                            "description": "Whenever Invaders Build a Coastal City, add 1 Town to the adjacent land with the fewest Town."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 9,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "Slow-Healing Ecosystem",
+            "staticInformation": "When you remove Blight from the board, put it here instead of onto the Blight Card. As soon as you have 3 Blight per player here, move it all back to the Blight Card.",
+            "phases": []
+        },
+        {
+            "level": 6,
+            "difficulty": 10,
+            "fearCards": [
+                4,
+                5,
+                5
+            ],
+            "name": "Persistent Explorers",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 20,
+                            "action": "add",
+                            "name": "Fear Cards",
+                            "description": "Fear Card effects never remove Explorer. If one would, you may instead Push that Explorer"
+                        },
+                        {
+                            "id": 50,
+                            "action": "add",
+                            "name": "Explore",
+                            "description": [
+                                "After resolving an Explore Card, on each board add 1 Explorer to a land without any."
+                            ]
+                        }
+                    ]
+                }
+            ] 
+        }
+    ]
+}

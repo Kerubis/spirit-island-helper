@@ -4,7 +4,7 @@
     "additionalLossCondition": {},
     "escalation": {
         "name": "Land Rush",
-        "description": "On each board with {town}/{city}, add 1 Town to a land without {town}. "
+        "description": "{escalation} On each board with {town}/{city}, add 1 {town} to a land without {town}."
     },
     "levels": [
         {
@@ -25,8 +25,7 @@
                         "During Setup, on each board add 1 {town} to land #3"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 2,
@@ -46,8 +45,7 @@
                         "When making the Invader Deck, put 1 of the Stage III cards between Stage I and Stage II. (New Deck Order:111-3-2222-3333)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 3,
@@ -67,8 +65,7 @@
                         "When making the Invader Deck, remove an additional Stage I card. (New Deck Order:11-3-2222-3333)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 4,
@@ -88,8 +85,7 @@
                         "When making the Invader Deck, remove an additional Stage II card. (New Deck Order:11-3-222-3333)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 5,
@@ -100,7 +96,6 @@
                 3
             ],
             "name": "Ruthlessly Efficient",
-            "staticInformation": "",
             "phases": [
                 {
                     "id": 10,
@@ -110,8 +105,7 @@
                         "When making the Invader Deck, remove an additional Stage I card. (New Deck Order:1-3-222-3333)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         },
         {
             "level": 6,
@@ -131,8 +125,7 @@
                         "When making the Invader Deck, remove all Stage I cards. (New Deck Order:3-222-3333)"
                     ]
                 }
-            ],
-            "invaderSteps": []
+            ]
         }
     ]
 }

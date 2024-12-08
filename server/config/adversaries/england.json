@@ -29,7 +29,7 @@
                             "id": 40,
                             "action": "add",
                             "name": "Build",
-                            "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                            "description": "Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
                         }
                     ]
                 }

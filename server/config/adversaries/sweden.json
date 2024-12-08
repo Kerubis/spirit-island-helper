@@ -1,0 +1,174 @@
+{
+    "name": "The Kingdom of Sweden",
+    "description": "",
+    "additionalLossCondition": {},
+    "escalation": {
+        "name": "Swayed by the Invaders",
+        "description": "{escalation} After Invaders Explore into each land this Phase, if that land has at least as many Invaders as {dahan}, replace 1 {dahan} with 1 {town}."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 2,
+            "fearCards": [
+                3,
+                3,
+                3
+            ],
+            "name": "Heavy Mining",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "If the Invaders do at least 6 Damage to the land during Ravage, add an extra {blight}. The additional {blight} does not destroy Presence or cause cascades."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Population Pressure at Home",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During Setup, on each board add 1 {city} to land #4. On boards where land #4 starts with {blight}, put that {blight} in land #5 instead."
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "difficulty": 5,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Fine Steel for Tools and Guns",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": [
+                                "{town} deal 3 Damage. {city} deal 5 Damage."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 4,
+            "difficulty": 6,
+            "fearCards": [
+                3,
+                4,
+                4
+            ],
+            "name": "Royal Backing",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During Setup, after adding all other Invaders, discard the top card of the Invader Deck. On each board, add 1 {town} to the land of that terrain with the fewest Invaders."
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                4,
+                4
+            ],
+            "name": "Mining Rush",
+            "staticInformation": "",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "When Ravaging adds at least 1 {blight} to a land, also add 1 {town} to an adjacent land without {town}/{city}. Cascading {blight} does not cause this effect"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 6,
+            "difficulty": 8,
+            "fearCards": [
+                4,
+                4,
+                5
+            ],
+            "name": "Prospecting Outpost",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During setup, on each board add 1 {town} and 1 {blight} to land #8. The {blight} comes from the box, not the {blight} Card."
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 7,
+            "difficulty": 8,
+            "fearCards": [
+                4,
+                5,
+                5
+            ],
+            "name": "(Exploratory level) Royal Focus",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 70,
+                            "action": "add",
+                            "name": "Advance Invader Cards",
+                            "description": "When an Invader Card is discarded during Advance Invader Cards, On Each Board: add 1 {town} to the matching land with the fewest Invaders."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
