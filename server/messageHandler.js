@@ -23,25 +23,25 @@ function handleMessage(wss, ws, message, broadcast, sendToClient) {
                 handleReady(wss, ws, parsedMessage, broadcast, sendToClient);
                 break;
             default:
-                sendToClient(ws, JSON.stringify({
+                sendToClient(ws, {
                     type: 'error',
                     message: '400 Bad Request',
-                }));
+                });
         }
     } catch (error) {
         console.log('Message Handler catching error:', error);
-        sendToClient(ws, JSON.stringify({
+        sendToClient(ws, {
             type: 'error',
             message: '400 Bad Request',
-        }));
+        });
     }
 }
 function handleGetPlayers(wss, ws, parsedMessage, broadcast, sendToClient) {
     const players = getPlayerArray(ws);
-    sendToClient(ws, JSON.stringify({
+    sendToClient(ws, {
         type: 'players',
         players,
-    }));
+    });
 }
 function handleJoinGame(wss, ws, parsedMessage, broadcast, sendToClient) {
     console.log('Handling join game');
@@ -55,19 +55,17 @@ function handleJoinGame(wss, ws, parsedMessage, broadcast, sendToClient) {
     broadcast(
         wss,
         ws,
-        JSON.stringify({
+        {
             type: 'players',
             players
-        })
-    );
+        });
     broadcast(
         wss,
         ws,
-        JSON.stringify({
+        {
             type: 'gameSetup',
             adversaries: getAdversaries()
-        })
-    );
+        });
 }
 function handleReady(wss, ws, parsedMessage, broadcast, sendToClient) {
     const clientInfo = clientData.get(ws);
@@ -78,11 +76,10 @@ function handleReady(wss, ws, parsedMessage, broadcast, sendToClient) {
     broadcast(
         wss,
         ws,
-        JSON.stringify({
+        {
             type: 'players',
             players
-        })
-    );
+        });
 }
 
 module.exports = {

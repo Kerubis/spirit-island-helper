@@ -9,8 +9,7 @@ function getPlayerArray(ws) {
             players.push({
                 username: info.username,
                 playerColor: info.playerColor,
-                ready: info.ready,
-                me: (client === ws)
+                ready: info.ready
             });
         }
     }
@@ -18,9 +17,16 @@ function getPlayerArray(ws) {
 }
 
 function getAdversaries() {
-    const filePath = path.join(__dirname, './config/adversaries.json');
-    const data = fs.readFileSync(filePath, 'utf8');
-    const adversaries = JSON.parse(data);
+    var adversaries = [];
+    //get all files in the adversaries directory
+    const directoryPath = path.join(__dirname, 'config/adversaries');
+    const files = fs.readdirSync(directoryPath);
+    //for each file, read the contents and add to the adversaries array
+    files.forEach(file => {
+        const data = fs.readFileSync(path.join(directoryPath, file), 'utf8');
+        adversaries.push(JSON.parse(data));
+    });
+    console.log(adversaries);
     return adversaries;
 }
 

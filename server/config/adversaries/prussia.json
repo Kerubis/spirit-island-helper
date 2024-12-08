@@ -1,0 +1,138 @@
+{
+    "name": "The Kingdom of Brandenburg-Prussia",
+    "description": "",
+    "additionalLossCondition": {},
+    "escalation": {
+        "name": "Land Rush",
+        "description": "On each board with {town}/{city}, add 1 Town to a land without {town}."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 2,
+            "fearCards": [
+                3,
+                3,
+                3
+            ],
+            "name": "Fast Start",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During Setup, on each board add 1 {town} to land #3"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 2,
+            "difficulty": 4,
+            "fearCards": [
+                3,
+                3,
+                3
+            ],
+            "name": "Surge of Colonists",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "When making the Invader Deck, put 1 of the Stage III cards between Stage I and Stage II. (New Deck Order:111-3-2222-3333)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 3,
+            "difficulty": 6,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Efficient",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "When making the Invader Deck, remove an additional Stage I card. (New Deck Order:11-3-2222-3333)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 4,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Aggressive Timetable",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "When making the Invader Deck, remove an additional Stage II card. (New Deck Order:11-3-222-3333)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 5,
+            "difficulty": 9,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Ruthlessly Efficient",
+            "staticInformation": "",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "When making the Invader Deck, remove an additional Stage I card. (New Deck Order:1-3-222-3333)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 6,
+            "difficulty": 10,
+            "fearCards": [
+                4,
+                4,
+                4
+            ],
+            "name": "Terrifyingly Efficient",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "When making the Invader Deck, remove all Stage I cards. (New Deck Order:3-222-3333)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        }
+    ]
+}

@@ -1,0 +1,127 @@
+
+{
+    "name": "The Kingdom of England",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Proud & Mighty Capitol",
+        "description": "If 7 or more {town}/{city} are ever in a single land, the Invaders win."
+    },
+    "escalation": {
+        "name": "Building Boom",
+        "description": "On each board with {town}/{city}, Build in the land with the most {town}/{city}."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Indentured Servants Earn Land",
+            "phases": [],
+            "invaderSteps": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Build",
+                    "description": "{flag-england}Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {town}/{city}."
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "difficulty": 4,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Criminals and Malcontents",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During Setup, on each board add 1 {city} to land #1 and 1 [town] to land #2"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        },
+        {
+            "level": 3,
+            "difficulty": 6,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "High Immigration (I)",
+            "phases": [],
+            "invaderSteps": [
+                {
+                    "id": 25,
+                    "action": "add",
+                    "name": "High Immigration",
+                    "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile. Remove the tile when a Stage II card slides onto it, putting that card in the discard."
+                }
+            ]
+        },
+        {
+            "level": 4,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                5,
+                5
+            ],
+            "name": "High Immigration (full)",
+            "phases": [],
+            "invaderSteps": [
+                {
+                    "id": 25,
+                    "action": "replace",
+                    "name": "High Immigration",
+                    "description": "Put the 'High Immigration' tile on the Invader board, to the left of 'Ravage'. The Invaders take this Build action each Invader phase before Ravaging. Cards slide left from Ravage to it, and from it to the discard pile."
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                5,
+                5
+            ],
+            "name": "Local Autonomy",
+            "staticInformation": "Town/City have +1 Health.",
+            "phases": [],
+            "invaderSteps": []
+        },
+        {
+            "level": 6,
+            "difficulty": 11,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "Independent Resolve",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        "During Setup, add an additional Fear to the Fear Pool per player in the game. During any Invader Phase where you resolve no Fear Cards, perform the Build from High Immigration twice. (This has no effect if no card is on the extra Build slot.)"
+                    ]
+                }
+            ],
+            "invaderSteps": []
+        }
+    ]
+}

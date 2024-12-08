@@ -20,33 +20,27 @@ ws.onmessage = (event) => {
             loginDiv.remove();
         }
     }
-    switch (parsed.type) {
+    switch (parsed.content.type) {
         case 'players':
-            renderPlayers(parsed.players, (ready) => {
+            renderPlayers(parsed, (ready) => {
                 ws.send(JSON.stringify({ type: "ready", ready: ready }));
             });
             break;
         case 'gameSetup':
-            renderGameSetup(parsed.adversaries, parsed.scenarios);
+            renderGameSetup(parsed.content.adversaries, parsed.content.scenarios);
             break;
         case 'gameData':
-            console.log('Game data:', parsed.data);
+            console.log('Game data:', parsed.content.game);
             break;
         case 'error':
-            console.log('Error:', parsed.message);
+            console.log('Error:', parsed.content.message);
             break;
         default:
-            console.log('Unknown message type:', parsed.type);
+            console.log('Unknown message type:', parsed);
     }
 };
 
 ws.onclose = () => {
-    appendMessage('Disconnected from server');
+    // appendMessage('Disconnected from server');
 };
 
-function appendMessage(message) {
-    const div = document.createElement('div');
-    div.textContent = message;
-    messagesDiv.appendChild(div);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Auto-scroll
-}

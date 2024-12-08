@@ -42,9 +42,10 @@ function generateLoginFormUI(players) {
         colorBox.style.height = "30px";
         colorBox.style.display = "inline-block";
         colorBox.style.borderRadius = "50%";
-        colorBox.style.margin = "0 2px";
+        colorBox.style.margin = "0 4px";
         colorBox.style.overflow = "hidden";
         colorBox.dataset.color = color;
+        colorBox.style.boxShadow = "0 0 4px 1px rgba(0, 0, 0, 0.5)";
 
         if (players.some(player => player.playerColor === color)) {
             //get player username
@@ -63,7 +64,7 @@ function generateLoginFormUI(players) {
         } else {
             colorBox.classList.add("color-box");
             colorBox.style.cursor = "pointer";
-            colorBox.style.border = "2px solid lightgreen";
+            colorBox.style.boxShadow = "0 0 6px 2px rgb(0 255 69)";
         }
 
         colorPicker.appendChild(colorBox);
@@ -84,8 +85,6 @@ function generateLoginFormUI(players) {
 function attachLoginFormLogic(players, uiElements, onJoinGame) {
     const { login, usernameInput, colorPicker, joinGameButton } = uiElements;
 
-    console.log(players);
-
     usernameInput.addEventListener("input", (e) => {
         document.querySelectorAll(".color-box").forEach(box => {
             box.innerHTML = "";
@@ -102,8 +101,6 @@ function attachLoginFormLogic(players, uiElements, onJoinGame) {
             });
             colorBox.classList.add("selected");
             colorBox.style.outline = "3px solid lightblue";
-
-            console.log(`Selected color: ${colorBox.dataset.color}`);
         });
     });
 

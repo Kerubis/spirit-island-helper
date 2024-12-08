@@ -1,6 +1,10 @@
 {
     "phases": {
         "10": {
+            "name": "Setup",
+            "steps": []
+        },
+        "20": {
             "name": "Spirit Phase",
             "steps": [
                 "Growth",
@@ -8,48 +12,48 @@
                 "Play and pay for Power Cards"
             ]
         },
-        "20": {
+        "30": {
             "name": "Fast Power Phase {fast}(Cards an Innate)"
         },
-        "30": {
+        "40": {
             "name": "Invader Phase",
             "steps": [
                 {
-                    "id":10,
-                    "name":"Bligted Island",
-                    "description":"Resolve Blighted Island effects"
+                    "id": 10,
+                    "name": "Bligted Island",
+                    "description": "Resolve Blighted Island effects"
                 },
                 {
-                    "id":20,
-                    "name":"Fear Cards",
-                    "description":"Resolve all active Fear Cards effects"
+                    "id": 20,
+                    "name": "Fear Cards",
+                    "description": "Resolve all active Fear Cards effects"
                 },
                 {
-                    "id":30,
-                    "name":"Ravage",
-                    "description":"Rave Step"
+                    "id": 30,
+                    "name": "Ravage",
+                    "description": "Rave Step"
                 },
                 {
-                    "id":40,
-                    "name":"Build",
-                    "description":"Build Step"
+                    "id": 40,
+                    "name": "Build",
+                    "description": "Build Step"
                 },
                 {
-                    "id":50,
-                    "name":"Explore (Stage II Escalation)",
-                    "description":"Escalation Step"
+                    "id": 50,
+                    "name": "Explore (Stage II Escalation)",
+                    "description": "Escalation Step"
                 },
                 {
-                    "id":60,
-                    "name":"Advance Invader Cards",
-                    "description":"Advance Invader Cards"
+                    "id": 60,
+                    "name": "Advance Invader Cards",
+                    "description": "Advance Invader Cards"
                 }
             ]
         },
-        "40": {
+        "50": {
             "name": "Slow Power Phase {slow}(Cards an Innate)"
         },
-        "50": {
+        "60": {
             "name": "Time Passes",
             "steps": [
                 "Played Power Cards go to personal discards.",

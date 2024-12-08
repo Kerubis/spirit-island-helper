@@ -1,15 +1,6 @@
 function renderGameSetup(adversaries, scenrios) {
-
-    const adversariesContainer = createadversariesContainer();
-    adversaries.forEach(adversary => {
-        const adversaryBox = createAdvasaryBox(adversary);
-        adversariesContainer.appendChild(adversaryBox);
-    });
+    const adversariesContainer = createadversariesContainer(adversaries);
     const scenriosContainer = createScenriosContainer();
-    // scenrios.forEach(scenrio => {
-    //     const scenrioBox = createScenrioBox(scenrio);
-    //     scenriosContainer.appendChild(scenrioBox);
-    // });
 
     const content = document.getElementById("content");
     // content.innerHTML = "";
@@ -17,29 +8,87 @@ function renderGameSetup(adversaries, scenrios) {
     content.appendChild(scenriosContainer);
 }
 
-function createadversariesContainer() {
+function createadversariesContainer(adversaries) {
     var adversariesContainer = document.getElementById("adversaries");
     if (!adversariesContainer) {
         adversariesContainer = document.createElement("div");
         adversariesContainer.style.position = "absolute";
         adversariesContainer.style.top = "0";
         adversariesContainer.style.left = "0";
-        adversariesContainer.style.width = "100%";
+        adversariesContainer.style.right = "0";
+        adversariesContainer.style.height = "50px";
+        adversariesContainer.style.margin = "10px";
         adversariesContainer.style.display = "flex";
         adversariesContainer.style.flexDirection = "row";
         adversariesContainer.style.alignItems = "center";
+        adversariesContainer.style.justifyContent = "center";
+        adversariesContainer.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
+        adversariesContainer.style.cursor = "pointer";
     }
+
+    const adversarySelection = document.createElement("div");
+    adversariesContainer.appendChild(adversarySelection);
+
+    const adversaryLabel = document.createElement("label");
+    adversaryLabel.textContent = "Adversary:";
+    adversarySelection.appendChild(adversaryLabel);
+
+    const adversarySelectBox = document.createElement("div");
+    adversarySelectBox.style.display = "none";
+    adversarySelectBox.style.position = "absolute";
+    adversarySelectBox.style.top = "70px";
+    adversarySelectBox.style.left = "20px";
+    adversarySelectBox.style.right = "20px";
+    adversarySelectBox.style.bottom = "20px";
+
+    adversariesContainer.appendChild(adversarySelectBox);
+
+    adversaries.forEach(adversary => {
+        const adversaryBox = createAdvasaryBox(adversary);
+        adversaryBox.onclick = (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            adversaryLabel.textContent = `Adversary: ${adversary.name}`;
+            adversarySelectBox.style.display = "none";
+        }
+        adversarySelectBox.appendChild(adversaryBox);
+
+        adversary.levels.forEach(level => {
+            adversariesLevelsBox = document.createElement("div");
+            adversariesLevelsBox.style.display = "flex";
+            adversariesLevelsBox.style.flexDirection = "row";
+            adversariesLevelsBox.style.justifyContent = "center";
+            adversariesLevelsBox.style.alignItems = "center";
+
+            const levelLabel = document.createElement("label");
+            levelLabel.textContent = level;
+
+            adversariesLevelsBox.appendChild(levelLabel);
+            adversarySelectBox.appendChild(adversariesLevelsBox);
+        });
+    });
+
+
+    //on click the adversarySelection show the adversarySelectBox
+    adversariesContainer.onclick = () => {
+        if (adversarySelectBox.style.display === "block") {
+            adversarySelectBox.style.display = "none";
+            return;
+        }
+        adversarySelectBox.style.display = "block";
+    }
+
     return adversariesContainer;
 }
 function createAdvasaryBox(advasary) {
     const adversaryBox = document.createElement("div");
     adversaryBox.style.position = "relative";
-    adversaryBox.style.width = "100px";
-    adversaryBox.style.height = "100px";
-    adversaryBox.style.backgroundColor = "lightblue";
-    adversaryBox.style.border = "1px solid black";
+    adversaryBox.style.width = "100%";
+    adversaryBox.style.height = "30px";
+    adversaryBox.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
+    adversaryBox.style.backgroundColor = "#cb8351";
     adversaryBox.style.borderRadius = "5px";
-    adversaryBox.style.margin = "5px";
+    adversaryBox.style.margin = "10px";
     adversaryBox.style.overflow = "hidden";
 
     const advasaryName = document.createElement("div");
@@ -48,8 +97,6 @@ function createAdvasaryBox(advasary) {
     advasaryName.style.bottom = "0";
     advasaryName.style.left = "0";
     advasaryName.style.width = "100%";
-    advasaryName.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    advasaryName.style.color = "white";
     advasaryName.style.textAlign = "center";
     advasaryName.style.padding = "5px";
 
