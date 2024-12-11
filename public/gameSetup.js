@@ -1,36 +1,34 @@
 function renderGameSetup(adversaries, scenrios) {
-    const gameSetupContainer = document.createElement("div");
-    gameSetupContainer.innerHTML = "";
-    gameSetupContainer.id = "gameSetup";
-    gameSetupContainer.style.position = "absolute";
-    gameSetupContainer.style.top = "0";
-    gameSetupContainer.style.left = "0";
-    gameSetupContainer.style.right = "0";
-    gameSetupContainer.style.bottom = "50px";
+    const content = document.getElementById("content");
+    var gameSetupContainer = document.getElementById("gameSetup");
+    if (!gameSetupContainer) {
+        gameSetupContainer = document.createElement("div");
+        gameSetupContainer.id = "gameSetup";
+        gameSetupContainer.style.position = "absolute";
+        gameSetupContainer.style.top = "0";
+        gameSetupContainer.style.left = "0";
+        gameSetupContainer.style.right = "0";
+        gameSetupContainer.style.bottom = "50px";
+    }
+    content.appendChild(gameSetupContainer);
 
     const adversariesContainer = createadversariesContainer(adversaries);
     const scenriosContainer = createScenriosContainer();
 
-    const content = document.getElementById("content");
-    content.innerHTML = "";
-    content.appendChild(gameSetupContainer);
     gameSetupContainer.appendChild(adversariesContainer);
     gameSetupContainer.appendChild(scenriosContainer);
 }
 
 function createadversariesContainer(adversaries) {
-    var adversariesContainer = document.getElementById("adversaries");
-    if (!adversariesContainer) {
-        adversariesContainer = document.createElement("div");
-        adversariesContainer.style.position = "absolute";
-        adversariesContainer.style.top = "10px";
-        adversariesContainer.style.left = "10px";
-        adversariesContainer.style.right = "10px";
-        adversariesContainer.style.height = "30px";
-        adversariesContainer.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
-        adversariesContainer.style.transition = "0.5s";
-        adversariesContainer.style.boxSizing = "border-box";
-    }
+    adversariesContainer = document.createElement("div");
+    adversariesContainer.style.position = "absolute";
+    adversariesContainer.style.top = "10px";
+    adversariesContainer.style.left = "10px";
+    adversariesContainer.style.right = "10px";
+    adversariesContainer.style.height = "30px";
+    adversariesContainer.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
+    adversariesContainer.style.transition = "0.5s";
+    adversariesContainer.style.boxSizing = "border-box";
 
     const adversarySelector = createAdvasarySelector();
     const adversaryLabel = createAdversaryLabel("Select Adversary");
@@ -44,35 +42,14 @@ function createadversariesContainer(adversaries) {
     adversaries.forEach(adversary => {
         const adversaryBox = createAdvasaryBox(adversary);
         adversarySelectBox.appendChild(adversaryBox);
+        adversarySelectBox.onclick = () => {
+            const tooltips = document.querySelectorAll(".tooltip");
+            tooltips.forEach(tooltip => tooltip.remove());
 
-        adversary.levels.sort((a, b) => b.level - a.level);
-        adversary.levels.forEach(level => {
-            console.log(level);
-            const adversariesLevelsBox = document.createElement("div");
-            adversariesLevelsBox.style.display = "flex";
-            adversariesLevelsBox.style.float = "right";
-            adversariesLevelsBox.style.padding = "5px";
-
-            const levelLabel = document.createElement("label");
-            levelLabel.textContent = `Level: ${level.level} (${level.difficulty})`;
-            levelLabel.onmouseover = () => {
-                const tooltipPosition = levelLabel.getBoundingClientRect().bottom + 10;
-                const tooltip = createLevelTooltip(level, tooltipPosition, true);
-                adversariesLevelsBox.appendChild(tooltip);
-            }
-            levelLabel.onmouseout = () => {
-                adversariesLevelsBox.removeChild(adversariesLevelsBox.lastChild);
-            }
-            adversariesLevelsBox.onclick = (event) => {
-                adversaryLabel.textContent = `Adversary: ${adversary.name} - Level: ${level.level} (${level.difficulty})`;
-                adversariesContainer.style.height = "30px";
-                adversarySelectBox.style.display = "none";
-                adversarySelectBox.style.transition = "0s";
-            }
-
-            adversariesLevelsBox.appendChild(levelLabel);
-            adversaryBox.appendChild(adversariesLevelsBox);
-        });
+            const tooltipPosition = adversaryBox.getBoundingClientRect().bottom + 10;
+            const tooltip = createAdversaryTooltip(adversary, tooltipPosition);
+            adversarySelectBox.appendChild(tooltip);
+        }
     });
 
 
@@ -127,7 +104,7 @@ function createAdvasaryBox(advasary) {
     adversaryBox.style.height = "30px";
     adversaryBox.style.marginTop = "8px";
     adversaryBox.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
-    adversaryBox.style.backgroundColor = "#cb8351";
+    adversaryBox.style.backgroundColor = "rgb(225,220,190)";
     adversaryBox.style.borderRadius = "5px";
     adversaryBox.style.overflow = "hidden";
 
@@ -143,29 +120,79 @@ function createAdvasaryBox(advasary) {
 
     return adversaryBox;
 }
-function createLevelTooltip(level, position, isTouch) {
+function createAdversaryTooltip(adversary, position) {
     const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
     tooltip.style.position = "fixed";
     tooltip.style.top = `${position}px`;
     tooltip.style.left = `50%`;
     tooltip.style.transform = `translateX(-50%)`;
-    tooltip.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    tooltip.style.color = "white";
-    tooltip.style.padding = "5px";
-    tooltip.style.borderRadius = "5px";
-    tooltip.style.width = "100%";
+    tooltip.style.color = "black";
+    tooltip.style.borderRadius = "15px";
+    tooltip.style.width = "900px";
+    tooltip.style.height = "600px";
     tooltip.style.zIndex = "1";
+    tooltip.style.overflow = "auto";
+    tooltip.style.boxShadow = "0 0 5px 2px rgba(0, 0, 0, 0.5)";
 
-    const levelName = document.createElement("span");
+    const tooltipHeader = document.createElement("div");
+    tooltipHeader.style.position = "absolute";
+    tooltipHeader.style.top = "0";
+    tooltipHeader.style.left = "0";
+    tooltipHeader.style.right = "0";
+    tooltipHeader.style.height = "36px";
+    tooltipHeader.style.backgroundColor = "rgb(225,220,190)";
+    tooltipHeader.style.borderBottom = "3px solid rgb(94, 92, 86)";
+    tooltip.appendChild(tooltipHeader);
+
+    const adveraryNameLabel = document.createElement("label");
+    adveraryNameLabel.textContent = adversary.name;
+    adveraryNameLabel.style.position = "absolute";
+
+    return tooltip;
+    
+    levels.sort((a, b) => b.level - a.level);
+    levels.forEach(level => {
+        const adversariesLevelsBox = document.createElement("div");
+        adversariesLevelsBox.style.display = "flex";
+        adversariesLevelsBox.style.float = "right";
+        adversariesLevelsBox.style.padding = "5px";
+
+        const levelLabel = document.createElement("label");
+        levelLabel.textContent = `Level: ${level.level} (${level.difficulty})`;
+
+        adversariesLevelsBox.appendChild(levelLabel);
+        tooltip.appendChild(adversariesLevelsBox);
+    });
+
+    const levelName = document.createElement("p");
     levelName.textContent = `Level: ${level.name}`;
     tooltip.appendChild(levelName);
 
-    //check if phases is nopt empty
+    const fearCards = document.createElement("p");
+    //sum the fear cards from the
+    const fearCardsTotal = level.fearCards.reduce((acc, val) => acc + val);
+    fearCards.textContent = `Fear Cards: ${fearCardsTotal}`;
+    tooltip.appendChild(fearCards);
+
     if (level.phases.length > 0) {
-        const levelDescription = document.createElement("span");
-        levelDescription.textContent = `${level.phases}`;
+        level.phases.forEach(phase => {
+            const phaseDescription = document.createElement("p");
+            phaseDescription.textContent = phase.name;
+            tooltip.appendChild(phaseDescription);
+            if (phase.steps.length > 0) {
+                phase.steps.forEach(step => {
+                    const stepName = document.createElement("p");
+                    stepName.textContent = step.name;
+                    tooltip.appendChild(stepName);
+
+                    const stepDescription = document.createElement("p");
+                    stepDescription.textContent = step.description;
+                    tooltip.appendChild(stepDescription);
+                });
+            }
+        });
     }
-    tooltip.appendChild(levelDescription);
 
     if (isTouch) {
         const confirmButton = document.createElement("button");

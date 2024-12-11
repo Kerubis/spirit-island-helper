@@ -26,7 +26,6 @@ function getAdversaries() {
         const data = fs.readFileSync(path.join(directoryPath, file), 'utf8');
         adversaries.push(JSON.parse(data));
     });
-    console.log(adversaries);
     return adversaries;
 }
 
