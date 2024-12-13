@@ -47,7 +47,9 @@
                     "action": "add",
                     "name": "Setup",
                     "steps": [
-                        "During Setup, on each board add 1 {city} to land #4. On boards where land #4 starts with {blight}, put that {blight} in land #5 instead."
+                        {
+                            "description": "During Setup, on each board add 1 {city} to land #4. On boards where land #4 starts with {blight}, put that {blight} in land #5 instead."
+                        }
                     ]
                 }
             ]
@@ -94,7 +96,9 @@
                     "action": "add",
                     "name": "Setup",
                     "steps": [
-                        "During Setup, after adding all other Invaders, discard the top card of the Invader Deck. On each board, add 1 {town} to the land of that terrain with the fewest Invaders."
+                        {
+                            "description": "During Setup, after adding all other Invaders, discard the top card of the Invader Deck. On each board, add 1 {town} to the land of that terrain with the fewest Invaders."
+                        }
                     ]
                 }
             ]

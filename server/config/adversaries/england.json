@@ -50,7 +50,9 @@
                     "action": "add",
                     "name": "Setup",
                     "steps": [
-                        "During Setup, on each board add 1 {city} to land #1 and 1 [town] to land #2"
+                        {
+                            "description": "During Setup, on each board add 1 {city} to land #1 and 1 [town] to land #2"
+                        }
                     ]
                 }
             ]
@@ -132,7 +134,9 @@
                     "action": "add",
                     "name": "Setup",
                     "steps": [
-                        "During Setup, add an additional Fear to the Fear Pool per player in the game. During any Invader Phase where you resolve no Fear Cards, perform the Build from High Immigration twice. (This has no effect if no card is on the extra Build slot.)"
+                        {
+                            "description": "During Setup, add an additional Fear to the Fear Pool per player in the game. During any Invader Phase where you resolve no Fear Cards, perform the Build from High Immigration twice. (This has no effect if no card is on the extra Build slot.)"
+                        }
                     ]
                 }
             ]

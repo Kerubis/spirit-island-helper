@@ -57,7 +57,11 @@
                     "id": 10,
                     "action": "add",
                     "name": "Setup",
-                    "description": "During Setup, put the 'Slave Rebellion' event under the top 3 cards of the Event Deck."
+                    "steps": [
+                        {
+                            "description": "During Setup, put the 'Slave Rebellion' event under the top 3 cards of the Event Deck."
+                        }
+                    ]
                 },
                 {
                     "id": 40,
@@ -88,10 +92,13 @@
                     "id": 10,
                     "action": "add",
                     "name": "Setup",
-                    "description": "During Setup, on each board add 1 Town to the highest-numbered land without Town. Add 1 Town to land #1."
+                    "steps": [
+                        {
+                            "description": "During Setup, on each board add 1 Town to the highest-numbered land without Town. Add 1 Town to land #1."
+                        }
+                    ]
                 }
-            ],
-            "40": []
+            ]
         },
         {
             "level": 4,
@@ -155,13 +162,11 @@
                             "id": 50,
                             "action": "add",
                             "name": "Explore",
-                            "description": [
-                                "After resolving an Explore Card, on each board add 1 Explorer to a land without any."
-                            ]
+                            "description": "After resolving an Explore Card, on each board add 1 Explorer to a land without any."
                         }
                     ]
                 }
-            ] 
+            ]
         }
     ]
 }

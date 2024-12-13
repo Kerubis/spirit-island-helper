@@ -1,0 +1,159 @@
+{
+    "name": "The Tsardom of Russia",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Hunters Swarm the Island",
+        "description": "Put <beasts> Destroyed by Adversary rules on this panel. If there are ever more <beasts> on this panel than on the island, the Invaders win.",
+        "phases": []
+    },
+    "escalation": {
+        "name": "Stalk the Predators",
+        "description": "{escalation}  On each board: Add 2 <explorer> (total) among lands with <beasts>. If you can't, instead add 2 <explorer> among lands with <beasts> on a different board."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                3,
+                4
+            ],
+            "name": "Hunters Bring Home Shell and Hide",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "During Setup, on each board, add 1 <beasts> and 1 <explorer> to the highest-numbered land without <town>/<city>."
+                        }
+                    ]
+                },
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "When Ravage adds <blight> to a land (including cascades), Destroy 1 <beasts> in that land."
+                        }
+                    ]
+                }
+            ],
+            "staticInformation": "<explorer> do +1 Damage."
+        },
+        {
+            "level": 2,
+            "difficulty": 4,
+            "fearCards": [
+                4,
+                3,
+                4
+            ],
+            "name": "A Sense for Impending Disaster",
+            "phases": [],
+            "staticInformation": "The first time each Action would Destroy <explorer>: If possible, 1 of those <explorer> is instead Pushed; 1 Fear when you do so."
+        },
+        {
+            "level": 3,
+            "difficulty": 6,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Competition Among Hunters",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "Ravage Cards also match lands with 3 or more <explorer>. (If the land already matched the Ravage Card, it still Ravages just once.)"
+                        }
+                    ]
+                }
+            ],
+            "40": []
+        },
+        {
+            "level": 4,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                4,
+                4
+            ],
+            "name": "Accelerated Exploitation",
+            "phases": [
+                {
+                    "id": 10,
+                    "name": "Setup",
+                    "action":"add",
+                    "steps":[
+                        {
+                            "description": "When making the Invader Deck, put 1 Stage III Card after each Stage II Card. (New Deck Order: 111-2-3-2-3-2-3-2-33)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 9,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "Entrench in the Face of Fear",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "Put an unused Stage II Invader Card under the top 3 Fear Cards, and an unused Stage III Card under the top 7 Fear Cards."
+                        }
+                    ]
+                }
+            ],
+            "staticInformation": "When an Invader Card in the Fear Deck is revealed, immediately place it in the Build space (face-up)."
+        },
+        {
+            "level": 6,
+            "difficulty": 11,
+            "fearCards": [
+                5,
+                5,
+                4
+            ],
+            "name": "Pressure for Fast Profit",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "After the Ravage Step of turn 2+, on each board where it added no <blight>: In the land with the most <explorer> (min. 1), add 1 <explorer> and 1 <town>."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,171 @@
+{
+    "name": "The Habsburg Monarchy (Livestock Colony)",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Irreparable Damage",
+        "description": "Track how many <blight> come off the Blight Card during Ravages that do 8+ Damage to the land. If that number ever exceeds players, the Invaders win.",
+        "phases": [
+            {
+                "id": 40,
+                "action": "add",
+                "name": "Invader Phase",
+                "steps": [
+                    {
+                        "id": 30,
+                        "action": "add",
+                        "name": "Ravage",
+                        "description": "Track how many <blight> come off the Blight Card during Ravages that do 8+ Damage to the land. If that number ever exceeds players, the Invaders win."
+                    }
+                ]
+            }
+        ]
+    },
+    "escalation": {
+        "name": "Seek Prime Territory",
+        "description": "{escalation}  After Exploring: On each board with 4 or fewer <blight>, add 1 <town> to a land without <town>/<blight>. On each board with 2 or fewer <blight>, do so again."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Migratory Herders",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 45,
+                            "action": "add",
+                            "name": "After Build",
+                            "description": "After the normal Build Step: In each land matching a Build Card, Gather 1 <town> from a land not matching a Build Card. (In board/land order.)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "difficulty": 5,
+            "fearCards": [
+                4,
+                5,
+                2
+            ],
+            "name": "More Rural Than Urban",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "During Setup, on each board, add 1 <town> to land #2 and 1 <town> to the highest-numbered land without Setup symbols."
+                        }
+                    ]
+                },
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 40,
+                            "action": "add",
+                            "name": "Build",
+                            "description": "During Play, when Invaders would Build 1 <city> in an Inland land, they instead Build 2 <town>."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "difficulty": 6,
+            "fearCards": [
+                4,
+                5,
+                3
+            ],
+            "name": "Fast Spread",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "When making the Invader Deck, Remove 1 additional Stage I Card. (New deck order: 11-2222-33333)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 4,
+            "difficulty": 8,
+            "fearCards": [
+                4,
+                5,
+                3
+            ],
+            "name": "Herds Thrive in Verdant Lands",
+            "staticInformation": "<town> in lands without <blight> are Durable: they have +2 Health, and 'Destroy <town>' effects instead deal 2 Damage (to those <town> only) per <town> they could Destroy. ('Destroy all <town>' works normally.)",
+            "phases": []
+        },
+        {
+            "level": 5,
+            "difficulty": 9,
+            "fearCards": [
+                4,
+                6,
+                3
+            ],
+            "name": "Wave of Immigration",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "Before the initial Explore, put the Habsburg Reminder Card under the top 5 Invader Cards."
+                        }
+                    ]
+                }
+            ],
+            "staticInformation": "When the Habsburg Reminder Card is Revealed, on each board, add 1 <city> to a Coastal land without <city> and 1 <town> to the 3 Inland lands with the fewest <blight>."
+        },
+        {
+            "level": 6,
+            "difficulty": 10,
+            "fearCards": [
+                5,
+                6,
+                3
+            ],
+            "name": "Far-Flung Herds",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "Ravages do +2 Damage (total) if any adjacent lands have <town>. (This does not cause lands without Invaders to Ravage.)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

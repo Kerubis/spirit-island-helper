@@ -1,0 +1,177 @@
+{
+    "name": "Habsburg Mining Expedition",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Land Stripped Bare",
+        "description": "At the end of the <fast> Phase, the Invaders win if any land has at least 8 total Invaders/<blight> (combined).",
+        "phases": [
+            {
+                "id": 30,
+                "action": "add",
+                "name": "Fast Phase",
+                "steps": [
+                    {
+                        "description": "At the end of the <fast> Phase, the Invaders win if any land has at least 8 total Invaders/<blight> (combined)."
+                    }
+                ]
+            }
+        ]
+    },
+    "escalation": {
+        "name": "Mining Tunnels",
+        "description": "{escalation}  After Advancing Invader Cards: On each board, Explore in 2 lands whose terrains don't match a Ravage or Build Card (no source required)."
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                3,
+                3
+            ],
+            "name": "Avarice Rewarded",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "In Mining lands: <disease> and modifiers to <disease> affect Ravage Actions as though they were Build Actions."
+                        },
+                        {
+                            "id": 40,
+                            "action":"add",
+                            "name": "Build",
+                            "description": "In Mining lands: During the Build Step, Build Cards cause Ravage Actions (instead of Build Actions)."
+                        }
+                    ]
+                }
+            ],
+            "staticInformation": "When <blight> added by a Ravage Action would cascade, instead Upgrade 1 <explorer>/<town> (before <dahan> counterattack.). Ceaseless Mining: Lands with 3 or more Invaders are Mining lands."
+        },
+        {
+            "level": 2,
+            "difficulty": 4,
+            "fearCards": [
+                3,
+                3,
+                4
+            ],
+            "name": "Miners Come From Far and Wide",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "Setup: Add 1 <explorer> in each land with no <dahan>. Add 1 <disease> and 1 <city> in the highest-numbered land with a <town> Setup symbol."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "difficulty": 5,
+            "fearCards": [
+                3,
+                4,
+                4
+            ],
+            "name": "Mining Boom (I)",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 46,
+                            "action": "add",
+                            "name": "After Build",
+                            "description": "After the Build Step, on each board: Choose a land with <explorer>. Upgrade 1 <explorer> there."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 4,
+            "difficulty": 7,
+            "fearCards": [
+                4,
+                4,
+                4
+            ],
+            "name": "Untapped Salt Deposits",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "Setup: Remove the Stage II 'Coastal Lands' card before randomly choosing Stage II cards. Place the 'Salt Deposits' card in place of the 2nd Stage II card. (New Deck Order: 111-2S22-33333, where S is the Salt Deposits card. Escalation ignores S.)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 9,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "Mining Boom (II)",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 46,
+                            "action": "add",
+                            "name": "After Build",
+                            "description": "Instead of Mining Boom (I), after the Build Step, on each board: Choose a land with <explorer>. Build there, then Upgrade 1 <explorer>. (Build normally in a Mining land.)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 6,
+            "difficulty": 10,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "The Empire Ascendant",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 50,
+                            "action": "add",
+                            "name": "Explore",
+                            "description": "Setup and During the Explore Step: On boards with 3 or fewer <blight>: Add +1 <explorer> in each land successfully explored. (Max. 2 lands per board per Explore Card.)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

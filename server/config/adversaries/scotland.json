@@ -1,0 +1,158 @@
+{
+    "name": "The Kingdom of Scotland",
+    "description": "",
+    "additionalLossCondition": {
+        "name": "Trade Hub",
+        "description": "If the number of Coastal lands with <city> is ever greater than (2 x # of boards), the Invaders win."
+    },
+    "escalation": {
+        "name": "Ports Sprawl Outward",
+        "description": "{escalation} On the single board with the most Coastal <town>/<city>, add 1 <town> to the N lands with the fewest <town> (N = # of players.)"
+    },
+    "levels": [
+        {
+            "level": 1,
+            "difficulty": 3,
+            "fearCards": [
+                3,
+                4,
+                3
+            ],
+            "name": "Trading Port",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 50,
+                            "action": "add",
+                            "name": "Explore",
+                            "description": "After Setup, in Coastal lands, Explore Cards add 1 <town> instead of 1 <explorer> . 'Coastal Lands' Invader cards do this for maximum 2 lands per board."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "difficulty": 4,
+            "fearCards": [
+                4,
+                4,
+                3
+            ],
+            "name": "Seize Opportunity",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "During Setup, add 1 <city> to land #2. Place 'Coastal Lands' as the 3rd Stage II card, and move the two Stage II Cards above it up by one. (New Deck Order: 11-22-1-C2-33333, where C is the Stage II Coastal Lands Card.)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "difficulty": 6,
+            "fearCards": [
+                4,
+                5,
+                4
+            ],
+            "name": "Chart the Coastline",
+       "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 40,
+                            "action": "add",
+                            "name": "Build",
+                            "description": "In Coastal lands, Build Cards affect lands without Invaders, so long as there is an adjacent <city>."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 4,
+            "difficulty": 7,
+            "fearCards": [
+                5,
+                5,
+                4
+            ],
+            "name": "Ambition of a Minor Nation",
+            "phases": [
+                {
+                    "id": 10,
+                    "action": "add",
+                    "name": "Setup",
+                    "steps": [
+                        {
+                            "description": "During Setup, replace the bottom Stage I Card with the bottom Stage III Card. (New Deck Order: 11-22-3-C2-3333)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 5,
+            "difficulty": 8,
+            "fearCards": [
+                5,
+                6,
+                4
+            ],
+            "name": "Runoff and Bilgewater",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "After a Ravage Action adds <blight> to a Coastal Land, add 1 <blight> to that board's Ocean (without cascading). Treat the Ocean as a Coastal Wetland for this rule and for <blight> removal/movement."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 6,
+            "difficulty": 10,
+            "fearCards": [
+                6,
+                6,
+                4
+            ],
+            "name": "Exports Fuel Inward Growth",
+            "phases": [
+                {
+                    "id": 40,
+                    "action": "add",
+                    "name": "Invader Phase",
+                    "steps": [
+                        {
+                            "id": 30,
+                            "action": "add",
+                            "name": "Ravage",
+                            "description": "After the Ravage step, add 1 <town> to each Inland land that matches a Ravage card and is within <range 1> of <town>/<city>."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
